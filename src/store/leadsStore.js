@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
 import { mockLeads, LEAD_STATUSES } from '../data/mockData';
 
 export const useLeadsStore = create(
