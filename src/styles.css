@@ -1,0 +1,43 @@
+/* Minimal, clean styles */
+:root { --bg:#0b0c10; --panel:#12141a; --muted:#9aa0a6; --text:#e8eaed; --brand:#6ea8fe; --ok:#27ae60; --warn:#f39c12; --danger:#e74c3c; --border:#22242c; }
+* { box-sizing: border-box; }
+html, body, #root { height:100%; }
+body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: var(--bg); }
+a { color: var(--text); text-decoration: none; }
+
+.app { display: grid; grid-template-columns: 260px 1fr; min-height: 100%; }
+.sidebar { background: var(--panel); border-right: 1px solid var(--border); padding: 16px; position: sticky; top:0; height:100vh; }
+.sidebar .logo { font-weight: 700; margin-bottom: 16px; }
+.sidebar nav { display: grid; gap: 6px; }
+.sidebar a { padding: 8px 10px; border-radius: 8px; }
+.sidebar a.active { background: #1a1d26; color: var(--brand); }
+.sidebar.open { display: block; }
+
+main { display: grid; grid-template-rows: auto 1fr; }
+header { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--panel); position: sticky; top:0; z-index: 1; }
+.spacer { flex: 1; }
+.content { padding: 16px; }
+.row { display: flex; align-items: center; }
+.stack { display: grid; }
+.gap-sm { gap: 8px; }
+.gap-lg { gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.kpi { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.kpi-label { color: var(--muted); font-size: 12px; }
+.kpi-value { font-weight: 700; font-size: 28px; }
+
+input, select, button { background: #0e1117; color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
+button { background: #1e222d; cursor: pointer; }
+button.ghost { background: transparent; border-color: transparent; }
+button.danger { background: #2a1515; border-color: #3a2222; color: var(--danger); }
+
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td { padding: 10px; border-bottom: 1px solid var(--border); text-align: left; }
+.list { margin: 0; padding-left: 18px; }
+.muted { color: var(--muted); font-size: 12px; }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { display: none; height:auto; position: static; }
+}
+
